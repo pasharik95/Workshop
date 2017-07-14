@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e7b14307b34246eba203100857955473" Name="Diagram1">
+        <EntityTypeShape EntityType="workshopModel.car" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.client" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.colorofcar" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.detail" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.markofcar" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.modelofcar" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.operation" Width="1.5" PointX="13.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.order" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.photo" Width="1.5" PointX="12.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.process" Width="1.5" PointX="15.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.process_has_detail" Width="1.5" PointX="12.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.standartdetail" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.worker" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="workshopModel.workerhasskill" Width="1.5" PointX="18.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="workshopModel.fk_Car_Client1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Car_ColorOfCar1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Car_ModelOfCar1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Detail_Car1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Order_Car1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Detail_StandartDetail1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Process_has_Detail_Detail1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_ModelOfCar_MarkOfCar1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Process_Operation1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_WorkerHasSkill_Operation1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Order_Worker1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Photo_Order1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Process_Order1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Process_has_Detail_Process1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_Process_Worker1" ManuallyRouted="false" />
+        <AssociationConnector Association="workshopModel.fk_WorkerHasSkill_Worker1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

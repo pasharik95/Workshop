@@ -1,0 +1,201 @@
+﻿<catel:DataWindow x:Class="MyCourseWork.Views.DocumentWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:catel="http://catel.codeplex.com"
+                  Width="763"
+                  Height="669"
+                  ResizeMode="CanResize"
+                  WindowStartupLocation="CenterScreen">
+
+    <catel:StackGrid x:Name="LayoutRoot"
+                     Width="753"
+                     Height="616"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top">
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="162" />
+        </catel:StackGrid.RowDefinitions>
+
+        <TabControl Width="733"
+                    Margin="0,0,0,-452"
+                    HorizontalAlignment="Left">
+            <TabItem Header="Завдання працівникам">
+                <Grid>
+                    <ListView Height="365"
+                              Margin="1,-1,0,0"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              ItemsSource="{Binding WorkersCollection}"
+                              SelectedItem="{Binding SelectedWorker}"
+                              Visibility="Visible">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="200"
+                                                DisplayMemberBinding="{Binding lastName}"
+                                                Header="Прізвище" />
+                                <GridViewColumn Width="150"
+                                                DisplayMemberBinding="{Binding firstName}"
+                                                Header="Ім'я" />
+                                <GridViewColumn Width="150"
+                                                DisplayMemberBinding="{Binding middleName}"
+                                                Header="По-батькові" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <RadioButton Margin="536,16,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 Content="Одне завдання"
+                                 IsChecked="{Binding OneTask}" />
+                    <RadioButton Margin="536,40,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 Content="Завдання на день"
+                                 IsChecked="{Binding ManyTasksOneDay}" />
+                    <RadioButton Margin="536,64,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 Content="Завдання в діапазоні дат"
+                                 IsChecked="{Binding ManyTasks}" />
+                    <Label Margin="560,88,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           HorizontalContentAlignment="Right"
+                           Content="{Binding TextLabel}" />
+                    <DatePicker Margin="560,112,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                SelectedDate="{Binding DateFirst}" />
+                    <Label Margin="560,145,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Завершуючи"
+                           Visibility="{Binding VisibleSecondDatePicker}" />
+                    <DatePicker Width="131"
+                                Margin="560,169,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                SelectedDate="{Binding DateSecond}"
+                                Visibility="{Binding VisibleSecondDatePicker}" />
+                    <Label Margin="2,365,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Виберіть завдання"
+                           IsEnabled="{Binding EnableTasksCollection}" />
+                    <ListView Width="708"
+                              Height="125"
+                              Margin="3,389,0,0"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              IsEnabled="{Binding EnableTasksCollection}"
+                              ItemsSource="{Binding TasksCollection}"
+                              SelectedItem="{Binding SelectedProcess}"
+                              Visibility="Visible">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="200"
+                                                DisplayMemberBinding="{Binding Path=operation.nameOperation}"
+                                                Header="Тип роботи" />
+                                <GridViewColumn Width="115"
+                                                DisplayMemberBinding="{Binding Path=order.car.modelofcar.markofcar.nameMarkOfCar}"
+                                                Header="Марка" />
+                                <GridViewColumn Width="115"
+                                                DisplayMemberBinding="{Binding Path=order.car.modelofcar.nameModelOfCar}"
+                                                Header="Модель" />
+                                <GridViewColumn Width="115"
+                                                DisplayMemberBinding="{Binding Path=order.car.registrNumber}"
+                                                Header="Номер" />
+                                <GridViewColumn Width="150"
+                                                DisplayMemberBinding="{Binding Path=getSetOfDetails}"
+                                                Header="Деталі" />
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Width="121"
+                            Height="41"
+                            Margin="303,535,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Command="{Binding CreateTaskDocument}"
+                            Content="Сформувати" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Наряди по автомобілю">
+                <Grid>
+                    <CheckBox Margin="591,29,0,0"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Content="Всі"
+                              FontSize="16"
+                              IsChecked="{Binding AllOrders}" />
+
+                    <CheckBox Margin="591,58,0,0"
+                              VerticalAlignment="Top"
+                              IsChecked="{Binding ComplateOrders}">
+                        <TextBlock Background="#90EE90" Text="Завершені" />
+                    </CheckBox>
+
+                    <CheckBox Margin="591,78,0,0"
+                              VerticalAlignment="Top"
+                              IsChecked="{Binding NoStartOrders}">
+                        <TextBlock Background="#FFB6C1" Text="Не розпочаті" />
+                    </CheckBox>
+
+                    <CheckBox Margin="591,98,0,0"
+                              VerticalAlignment="Top"
+                              IsChecked="{Binding DoingOrders}">
+                        <TextBlock Background="#87CEFA" Text="Зараз виконується" />
+                    </CheckBox>
+                    <Button Width="102"
+                            Height="33"
+                            Margin="597,127,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Background="#FFFFD157"
+                            Command="{Binding FindOrdersCommand}"
+                            Content="НАЙТИ"
+                            FontWeight="Bold" />
+                    <ListView Width="565"
+                              Height="445"
+                              Margin="10,0,0,0"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              ItemsSource="{Binding OrdersCollection}"
+                              SelectedItem="{Binding SelectedOrder}">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="Background" Value="{Binding Path=Color}" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="150"
+                                                DisplayMemberBinding="{Binding Path=car.modelofcar.markofcar.nameMarkOfCar}"
+                                                Header="Марка" />
+                                <GridViewColumn Width="150"
+                                                DisplayMemberBinding="{Binding Path=car.modelofcar.nameModelOfCar}"
+                                                Header="Модель" />
+                                <GridViewColumn Width="150"
+                                                DisplayMemberBinding="{Binding Path=car.registrNumber}"
+                                                Header="Реєстраційний номер" />
+                                <GridViewColumn Width="100"
+                                                DisplayMemberBinding="{Binding Path=car.colorofcar.nameColorOfCar}"
+                                                Header="Колір" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Width="121"
+                            Height="41"
+                            Margin="303,535,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Command="{Binding CreateWorksWithCarDocument}"
+                            Content="Сформувати" />
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </catel:StackGrid>
+
+</catel:DataWindow>

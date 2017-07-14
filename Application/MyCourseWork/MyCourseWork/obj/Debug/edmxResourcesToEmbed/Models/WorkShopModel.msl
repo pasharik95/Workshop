@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище workshopModelContainer" CdmEntityContainer="workshopEntities">
+    <EntitySetMapping Name="car">
+      <EntityTypeMapping TypeName="workshopModel.car">
+        <MappingFragment StoreEntitySet="car">
+          <ScalarProperty Name="idCar" ColumnName="idCar" />
+          <ScalarProperty Name="vincod" ColumnName="vincod" />
+          <ScalarProperty Name="registrNumber" ColumnName="registrNumber" />
+          <ScalarProperty Name="ModelOfCar_idModelOfCar" ColumnName="ModelOfCar_idModelOfCar" />
+          <ScalarProperty Name="ColorOfCar_idColorOfCar" ColumnName="ColorOfCar_idColorOfCar" />
+          <ScalarProperty Name="Client_idClient" ColumnName="Client_idClient" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="client">
+      <EntityTypeMapping TypeName="workshopModel.client">
+        <MappingFragment StoreEntitySet="client">
+          <ScalarProperty Name="idClient" ColumnName="idClient" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="colorofcar">
+      <EntityTypeMapping TypeName="workshopModel.colorofcar">
+        <MappingFragment StoreEntitySet="colorofcar">
+          <ScalarProperty Name="idColorOfCar" ColumnName="idColorOfCar" />
+          <ScalarProperty Name="nameColorOfCar" ColumnName="nameColorOfCar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detail">
+      <EntityTypeMapping TypeName="workshopModel.detail">
+        <MappingFragment StoreEntitySet="detail">
+          <ScalarProperty Name="idDetail" ColumnName="idDetail" />
+          <ScalarProperty Name="StandartDetail_idStandartDetail" ColumnName="StandartDetail_idStandartDetail" />
+          <ScalarProperty Name="Car_idCar" ColumnName="Car_idCar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="markofcar">
+      <EntityTypeMapping TypeName="workshopModel.markofcar">
+        <MappingFragment StoreEntitySet="markofcar">
+          <ScalarProperty Name="idMarkOfCar" ColumnName="idMarkOfCar" />
+          <ScalarProperty Name="nameMarkOfCar" ColumnName="nameMarkOfCar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modelofcar">
+      <EntityTypeMapping TypeName="workshopModel.modelofcar">
+        <MappingFragment StoreEntitySet="modelofcar">
+          <ScalarProperty Name="idModelOfCar" ColumnName="idModelOfCar" />
+          <ScalarProperty Name="nameModelOfCar" ColumnName="nameModelOfCar" />
+          <ScalarProperty Name="MarkOfCar_idMarkOfCar" ColumnName="MarkOfCar_idMarkOfCar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="operation">
+      <EntityTypeMapping TypeName="workshopModel.operation">
+        <MappingFragment StoreEntitySet="operation">
+          <ScalarProperty Name="idOperation" ColumnName="idOperation" />
+          <ScalarProperty Name="nameOperation" ColumnName="nameOperation" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order">
+      <EntityTypeMapping TypeName="workshopModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="idOrder" ColumnName="idOrder" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Worker_idWorker" ColumnName="Worker_idWorker" />
+          <ScalarProperty Name="Car_idCar" ColumnName="Car_idCar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="photo">
+      <EntityTypeMapping TypeName="workshopModel.photo">
+        <MappingFragment StoreEntitySet="photo">
+          <ScalarProperty Name="idPhoto" ColumnName="idPhoto" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="Order_idOrder" ColumnName="Order_idOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="process">
+      <EntityTypeMapping TypeName="workshopModel.process">
+        <MappingFragment StoreEntitySet="process">
+          <ScalarProperty Name="idProcess" ColumnName="idProcess" />
+          <ScalarProperty Name="dateTimeStart" ColumnName="dateTimeStart" />
+          <ScalarProperty Name="dateTimeFinish" ColumnName="dateTimeFinish" />
+          <ScalarProperty Name="dateTimeStartFact" ColumnName="dateTimeStartFact" />
+          <ScalarProperty Name="dateTimeFinishFact" ColumnName="dateTimeFinishFact" />
+          <ScalarProperty Name="Worker_idWorker" ColumnName="Worker_idWorker" />
+          <ScalarProperty Name="Operation_idOperation" ColumnName="Operation_idOperation" />
+          <ScalarProperty Name="Order_idOrder" ColumnName="Order_idOrder" />
+          <ScalarProperty Name="Worker_idWorker_Fact" ColumnName="Worker_idWorker_Fact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="process_has_detail">
+      <EntityTypeMapping TypeName="workshopModel.process_has_detail">
+        <MappingFragment StoreEntitySet="process_has_detail">
+          <ScalarProperty Name="idProcess_has_Detail" ColumnName="idProcess_has_Detail" />
+          <ScalarProperty Name="Process_idProcess" ColumnName="Process_idProcess" />
+          <ScalarProperty Name="Detail_idDetail" ColumnName="Detail_idDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="standartdetail">
+      <EntityTypeMapping TypeName="workshopModel.standartdetail">
+        <MappingFragment StoreEntitySet="standartdetail">
+          <ScalarProperty Name="idStandartDetail" ColumnName="idStandartDetail" />
+          <ScalarProperty Name="nameStandartDetail" ColumnName="nameStandartDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="worker">
+      <EntityTypeMapping TypeName="workshopModel.worker">
+        <MappingFragment StoreEntitySet="worker">
+          <ScalarProperty Name="idWorker" ColumnName="idWorker" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="workerhasskill">
+      <EntityTypeMapping TypeName="workshopModel.workerhasskill">
+        <MappingFragment StoreEntitySet="workerhasskill">
+          <ScalarProperty Name="idWorkerHasSkill" ColumnName="idWorkerHasSkill" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="Worker_idWorker" ColumnName="Worker_idWorker" />
+          <ScalarProperty Name="Operation_idOperation" ColumnName="Operation_idOperation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

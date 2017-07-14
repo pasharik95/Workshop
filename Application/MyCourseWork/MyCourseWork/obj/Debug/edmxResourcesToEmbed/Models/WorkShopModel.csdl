@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="workshopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="car">
+    <Key>
+      <PropertyRef Name="idCar" />
+    </Key>
+    <Property Name="idCar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vincod" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="registrNumber" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="ModelOfCar_idModelOfCar" Type="Int32" Nullable="false" />
+    <Property Name="ColorOfCar_idColorOfCar" Type="Int32" Nullable="false" />
+    <Property Name="Client_idClient" Type="Int32" Nullable="false" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+    <NavigationProperty Name="client" Relationship="Self.fk_Car_Client1" FromRole="car" ToRole="client" />
+    <NavigationProperty Name="colorofcar" Relationship="Self.fk_Car_ColorOfCar1" FromRole="car" ToRole="colorofcar" />
+    <NavigationProperty Name="modelofcar" Relationship="Self.fk_Car_ModelOfCar1" FromRole="car" ToRole="modelofcar" />
+    <NavigationProperty Name="detail" Relationship="Self.fk_Detail_Car1" FromRole="car" ToRole="detail" />
+    <NavigationProperty Name="order" Relationship="Self.fk_Order_Car1" FromRole="car" ToRole="order" />
+  </EntityType>
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="idClient" />
+    </Key>
+    <Property Name="idClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="middleName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="lastName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="car" Relationship="Self.fk_Car_Client1" FromRole="client" ToRole="car" />
+  </EntityType>
+  <EntityType Name="colorofcar">
+    <Key>
+      <PropertyRef Name="idColorOfCar" />
+    </Key>
+    <Property Name="idColorOfCar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameColorOfCar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="car" Relationship="Self.fk_Car_ColorOfCar1" FromRole="colorofcar" ToRole="car" />
+  </EntityType>
+  <EntityType Name="detail">
+    <Key>
+      <PropertyRef Name="idDetail" />
+    </Key>
+    <Property Name="idDetail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StandartDetail_idStandartDetail" Type="Int32" Nullable="false" />
+    <Property Name="Car_idCar" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="car" Relationship="Self.fk_Detail_Car1" FromRole="detail" ToRole="car" />
+    <NavigationProperty Name="standartdetail" Relationship="Self.fk_Detail_StandartDetail1" FromRole="detail" ToRole="standartdetail" />
+    <NavigationProperty Name="process_has_detail" Relationship="Self.fk_Process_has_Detail_Detail1" FromRole="detail" ToRole="process_has_detail" />
+  </EntityType>
+  <EntityType Name="markofcar">
+    <Key>
+      <PropertyRef Name="idMarkOfCar" />
+    </Key>
+    <Property Name="idMarkOfCar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameMarkOfCar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="modelofcar" Relationship="Self.fk_ModelOfCar_MarkOfCar1" FromRole="markofcar" ToRole="modelofcar" />
+  </EntityType>
+  <EntityType Name="modelofcar">
+    <Key>
+      <PropertyRef Name="idModelOfCar" />
+    </Key>
+    <Property Name="idModelOfCar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameModelOfCar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MarkOfCar_idMarkOfCar" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="car" Relationship="Self.fk_Car_ModelOfCar1" FromRole="modelofcar" ToRole="car" />
+    <NavigationProperty Name="markofcar" Relationship="Self.fk_ModelOfCar_MarkOfCar1" FromRole="modelofcar" ToRole="markofcar" />
+  </EntityType>
+  <EntityType Name="operation">
+    <Key>
+      <PropertyRef Name="idOperation" />
+    </Key>
+    <Property Name="idOperation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameOperation" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="duration" Type="Time" />
+    <Property Name="Color" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="process" Relationship="Self.fk_Process_Operation1" FromRole="operation" ToRole="process" />
+    <NavigationProperty Name="workerhasskill" Relationship="Self.fk_WorkerHasSkill_Operation1" FromRole="operation" ToRole="workerhasskill" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="idOrder" />
+    </Key>
+    <Property Name="idOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateTime" Type="DateTime" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="Worker_idWorker" Type="Int32" Nullable="false" />
+    <Property Name="Car_idCar" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="car" Relationship="Self.fk_Order_Car1" FromRole="order" ToRole="car" />
+    <NavigationProperty Name="worker" Relationship="Self.fk_Order_Worker1" FromRole="order" ToRole="worker" />
+    <NavigationProperty Name="photo" Relationship="Self.fk_Photo_Order1" FromRole="order" ToRole="photo" />
+    <NavigationProperty Name="process" Relationship="Self.fk_Process_Order1" FromRole="order" ToRole="process" />
+  </EntityType>
+  <EntityType Name="photo">
+    <Key>
+      <PropertyRef Name="idPhoto" />
+    </Key>
+    <Property Name="idPhoto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="notes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dateTime" Type="DateTime" />
+    <Property Name="Order_idOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="order" Relationship="Self.fk_Photo_Order1" FromRole="photo" ToRole="order" />
+  </EntityType>
+  <EntityType Name="process">
+    <Key>
+      <PropertyRef Name="idProcess" />
+    </Key>
+    <Property Name="idProcess" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateTimeStart" Type="DateTime" />
+    <Property Name="dateTimeFinish" Type="DateTime" />
+    <Property Name="dateTimeStartFact" Type="DateTime" />
+    <Property Name="dateTimeFinishFact" Type="DateTime" />
+    <Property Name="Worker_idWorker" Type="Int32" Nullable="false" />
+    <Property Name="Operation_idOperation" Type="Int32" Nullable="false" />
+    <Property Name="Order_idOrder" Type="Int32" Nullable="false" />
+    <Property Name="Worker_idWorker_Fact" Type="Int32" />
+    <NavigationProperty Name="operation" Relationship="Self.fk_Process_Operation1" FromRole="process" ToRole="operation" />
+    <NavigationProperty Name="order" Relationship="Self.fk_Process_Order1" FromRole="process" ToRole="order" />
+    <NavigationProperty Name="process_has_detail" Relationship="Self.fk_Process_has_Detail_Process1" FromRole="process" ToRole="process_has_detail" />
+    <NavigationProperty Name="worker" Relationship="Self.fk_Process_Worker1" FromRole="process" ToRole="worker" />
+  </EntityType>
+  <EntityType Name="process_has_detail">
+    <Key>
+      <PropertyRef Name="idProcess_has_Detail" />
+    </Key>
+    <Property Name="idProcess_has_Detail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Process_idProcess" Type="Int32" Nullable="false" />
+    <Property Name="Detail_idDetail" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="detail" Relationship="Self.fk_Process_has_Detail_Detail1" FromRole="process_has_detail" ToRole="detail" />
+    <NavigationProperty Name="process" Relationship="Self.fk_Process_has_Detail_Process1" FromRole="process_has_detail" ToRole="process" />
+  </EntityType>
+  <EntityType Name="standartdetail">
+    <Key>
+      <PropertyRef Name="idStandartDetail" />
+    </Key>
+    <Property Name="idStandartDetail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameStandartDetail" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="detail" Relationship="Self.fk_Detail_StandartDetail1" FromRole="standartdetail" ToRole="detail" />
+  </EntityType>
+  <EntityType Name="worker">
+    <Key>
+      <PropertyRef Name="idWorker" />
+    </Key>
+    <Property Name="idWorker" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="middleName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="lastName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="order" Relationship="Self.fk_Order_Worker1" FromRole="worker" ToRole="order" />
+    <NavigationProperty Name="process" Relationship="Self.fk_Process_Worker1" FromRole="worker" ToRole="process" />
+    <NavigationProperty Name="workerhasskill" Relationship="Self.fk_WorkerHasSkill_Worker1" FromRole="worker" ToRole="workerhasskill" />
+  </EntityType>
+  <EntityType Name="workerhasskill">
+    <Key>
+      <PropertyRef Name="idWorkerHasSkill" />
+    </Key>
+    <Property Name="idWorkerHasSkill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="level" Type="Int32" />
+    <Property Name="Worker_idWorker" Type="Int32" Nullable="false" />
+    <Property Name="Operation_idOperation" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="operation" Relationship="Self.fk_WorkerHasSkill_Operation1" FromRole="workerhasskill" ToRole="operation" />
+    <NavigationProperty Name="worker" Relationship="Self.fk_WorkerHasSkill_Worker1" FromRole="workerhasskill" ToRole="worker" />
+  </EntityType>
+  <Association Name="fk_Car_Client1">
+    <End Role="client" Type="Self.client" Multiplicity="1" />
+    <End Role="car" Type="Self.car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="idClient" />
+      </Principal>
+      <Dependent Role="car">
+        <PropertyRef Name="Client_idClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Car_ColorOfCar1">
+    <End Role="colorofcar" Type="Self.colorofcar" Multiplicity="1" />
+    <End Role="car" Type="Self.car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="colorofcar">
+        <PropertyRef Name="idColorOfCar" />
+      </Principal>
+      <Dependent Role="car">
+        <PropertyRef Name="ColorOfCar_idColorOfCar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Car_ModelOfCar1">
+    <End Role="modelofcar" Type="Self.modelofcar" Multiplicity="1" />
+    <End Role="car" Type="Self.car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="modelofcar">
+        <PropertyRef Name="idModelOfCar" />
+      </Principal>
+      <Dependent Role="car">
+        <PropertyRef Name="ModelOfCar_idModelOfCar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Detail_Car1">
+    <End Role="car" Type="Self.car" Multiplicity="1" />
+    <End Role="detail" Type="Self.detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="car">
+        <PropertyRef Name="idCar" />
+      </Principal>
+      <Dependent Role="detail">
+        <PropertyRef Name="Car_idCar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Order_Car1">
+    <End Role="car" Type="Self.car" Multiplicity="1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="car">
+        <PropertyRef Name="idCar" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="Car_idCar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Detail_StandartDetail1">
+    <End Role="standartdetail" Type="Self.standartdetail" Multiplicity="1" />
+    <End Role="detail" Type="Self.detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="standartdetail">
+        <PropertyRef Name="idStandartDetail" />
+      </Principal>
+      <Dependent Role="detail">
+        <PropertyRef Name="StandartDetail_idStandartDetail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Process_has_Detail_Detail1">
+    <End Role="detail" Type="Self.detail" Multiplicity="1" />
+    <End Role="process_has_detail" Type="Self.process_has_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="detail">
+        <PropertyRef Name="idDetail" />
+      </Principal>
+      <Dependent Role="process_has_detail">
+        <PropertyRef Name="Detail_idDetail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ModelOfCar_MarkOfCar1">
+    <End Role="markofcar" Type="Self.markofcar" Multiplicity="1" />
+    <End Role="modelofcar" Type="Self.modelofcar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="markofcar">
+        <PropertyRef Name="idMarkOfCar" />
+      </Principal>
+      <Dependent Role="modelofcar">
+        <PropertyRef Name="MarkOfCar_idMarkOfCar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Process_Operation1">
+    <End Role="operation" Type="Self.operation" Multiplicity="1" />
+    <End Role="process" Type="Self.process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operation">
+        <PropertyRef Name="idOperation" />
+      </Principal>
+      <Dependent Role="process">
+        <PropertyRef Name="Operation_idOperation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_WorkerHasSkill_Operation1">
+    <End Role="operation" Type="Self.operation" Multiplicity="1" />
+    <End Role="workerhasskill" Type="Self.workerhasskill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operation">
+        <PropertyRef Name="idOperation" />
+      </Principal>
+      <Dependent Role="workerhasskill">
+        <PropertyRef Name="Operation_idOperation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Order_Worker1">
+    <End Role="worker" Type="Self.worker" Multiplicity="1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="worker">
+        <PropertyRef Name="idWorker" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="Worker_idWorker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Photo_Order1">
+    <End Role="order" Type="Self.order" Multiplicity="1" />
+    <End Role="photo" Type="Self.photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="idOrder" />
+      </Principal>
+      <Dependent Role="photo">
+        <PropertyRef Name="Order_idOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Process_Order1">
+    <End Role="order" Type="Self.order" Multiplicity="1" />
+    <End Role="process" Type="Self.process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="idOrder" />
+      </Principal>
+      <Dependent Role="process">
+        <PropertyRef Name="Order_idOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Process_has_Detail_Process1">
+    <End Role="process" Type="Self.process" Multiplicity="1" />
+    <End Role="process_has_detail" Type="Self.process_has_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="process">
+        <PropertyRef Name="idProcess" />
+      </Principal>
+      <Dependent Role="process_has_detail">
+        <PropertyRef Name="Process_idProcess" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Process_Worker1">
+    <End Role="worker" Type="Self.worker" Multiplicity="1" />
+    <End Role="process" Type="Self.process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="worker">
+        <PropertyRef Name="idWorker" />
+      </Principal>
+      <Dependent Role="process">
+        <PropertyRef Name="Worker_idWorker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_WorkerHasSkill_Worker1">
+    <End Role="worker" Type="Self.worker" Multiplicity="1" />
+    <End Role="workerhasskill" Type="Self.workerhasskill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="worker">
+        <PropertyRef Name="idWorker" />
+      </Principal>
+      <Dependent Role="workerhasskill">
+        <PropertyRef Name="Worker_idWorker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="workshopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="car" EntityType="Self.car" />
+    <EntitySet Name="client" EntityType="Self.client" />
+    <EntitySet Name="colorofcar" EntityType="Self.colorofcar" />
+    <EntitySet Name="detail" EntityType="Self.detail" />
+    <EntitySet Name="markofcar" EntityType="Self.markofcar" />
+    <EntitySet Name="modelofcar" EntityType="Self.modelofcar" />
+    <EntitySet Name="operation" EntityType="Self.operation" />
+    <EntitySet Name="order" EntityType="Self.order" />
+    <EntitySet Name="photo" EntityType="Self.photo" />
+    <EntitySet Name="process" EntityType="Self.process" />
+    <EntitySet Name="process_has_detail" EntityType="Self.process_has_detail" />
+    <EntitySet Name="standartdetail" EntityType="Self.standartdetail" />
+    <EntitySet Name="worker" EntityType="Self.worker" />
+    <EntitySet Name="workerhasskill" EntityType="Self.workerhasskill" />
+    <AssociationSet Name="fk_Car_Client1" Association="Self.fk_Car_Client1">
+      <End Role="client" EntitySet="client" />
+      <End Role="car" EntitySet="car" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Car_ColorOfCar1" Association="Self.fk_Car_ColorOfCar1">
+      <End Role="colorofcar" EntitySet="colorofcar" />
+      <End Role="car" EntitySet="car" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Car_ModelOfCar1" Association="Self.fk_Car_ModelOfCar1">
+      <End Role="modelofcar" EntitySet="modelofcar" />
+      <End Role="car" EntitySet="car" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Detail_Car1" Association="Self.fk_Detail_Car1">
+      <End Role="car" EntitySet="car" />
+      <End Role="detail" EntitySet="detail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Order_Car1" Association="Self.fk_Order_Car1">
+      <End Role="car" EntitySet="car" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Detail_StandartDetail1" Association="Self.fk_Detail_StandartDetail1">
+      <End Role="standartdetail" EntitySet="standartdetail" />
+      <End Role="detail" EntitySet="detail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Process_has_Detail_Detail1" Association="Self.fk_Process_has_Detail_Detail1">
+      <End Role="detail" EntitySet="detail" />
+      <End Role="process_has_detail" EntitySet="process_has_detail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ModelOfCar_MarkOfCar1" Association="Self.fk_ModelOfCar_MarkOfCar1">
+      <End Role="markofcar" EntitySet="markofcar" />
+      <End Role="modelofcar" EntitySet="modelofcar" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Process_Operation1" Association="Self.fk_Process_Operation1">
+      <End Role="operation" EntitySet="operation" />
+      <End Role="process" EntitySet="process" />
+    </AssociationSet>
+    <AssociationSet Name="fk_WorkerHasSkill_Operation1" Association="Self.fk_WorkerHasSkill_Operation1">
+      <End Role="operation" EntitySet="operation" />
+      <End Role="workerhasskill" EntitySet="workerhasskill" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Order_Worker1" Association="Self.fk_Order_Worker1">
+      <End Role="worker" EntitySet="worker" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Photo_Order1" Association="Self.fk_Photo_Order1">
+      <End Role="order" EntitySet="order" />
+      <End Role="photo" EntitySet="photo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Process_Order1" Association="Self.fk_Process_Order1">
+      <End Role="order" EntitySet="order" />
+      <End Role="process" EntitySet="process" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Process_has_Detail_Process1" Association="Self.fk_Process_has_Detail_Process1">
+      <End Role="process" EntitySet="process" />
+      <End Role="process_has_detail" EntitySet="process_has_detail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Process_Worker1" Association="Self.fk_Process_Worker1">
+      <End Role="worker" EntitySet="worker" />
+      <End Role="process" EntitySet="process" />
+    </AssociationSet>
+    <AssociationSet Name="fk_WorkerHasSkill_Worker1" Association="Self.fk_WorkerHasSkill_Worker1">
+      <End Role="worker" EntitySet="worker" />
+      <End Role="workerhasskill" EntitySet="workerhasskill" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,86 @@
+﻿<catel:DataWindow x:Class="MyCourseWork.Views.AddComplatedProcccessWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:catel="http://catel.codeplex.com"
+                  xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+                  Width="1067.925"
+                  Height="600"
+                  Closing="DataWindow_Closing"
+                  Loaded="DataWindow_Loaded"
+                  WindowStartupLocation="CenterOwner">
+
+
+    <catel:StackGrid Width="1050"
+                     Height="507"
+                     Margin="0,4,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top">
+        <WindowsFormsHost Width="500"
+                          Height="400"
+                          Margin="31,31,0,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top">
+
+            <wf:PictureBox x:Name="pictureBox1" SizeMode="StretchImage" />
+        </WindowsFormsHost>
+        <ComboBox Name="VideoDevicesComboBox"
+                  Width="498"
+                  Margin="33,453,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  IsReadOnly="True"
+                  SelectionChanged="ComboBox_SelectionChanged" />
+        <Label Name="infoFromQRCode"
+               Content="{Binding InfoAboutProccess}"
+               Visibility="Hidden" />
+        <Label Width="275"
+               Height="39"
+               Margin="700,18,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Отримана інформація"
+               FontFamily="Times New Roman"
+               FontSize="22"
+               FontWeight="Bold" />
+        <TextBlock Name="fullInfoFromQRCode"
+                   Width="488"
+                   Height="256"
+                   Margin="559,121,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   FontFamily="Times New Roman"
+                   FontSize="18"
+                   Text="{Binding InfoAboutProccess}" />
+        <TextBox Width="479"
+                 Height="80"
+                 Margin="557,397,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top" />
+        <Label Width="100"
+               Margin="556,373,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Коментар" />
+        <Label Name="id_procces"
+               Content=""
+               Visibility="Hidden" />
+        <Label Name="id_worker"
+               Content=""
+               Visibility="Hidden" />
+        <Label Name="InfoAboutWorker"
+               Margin="559,66,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               FontFamily="Times New Roman"
+               FontSize="22" />
+        <!--
+            <Label Width="100"
+            Height="19"
+            Margin="574,53,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="{Binding InfoAboutProccess}" />
+        -->
+    </catel:StackGrid>
+
+</catel:DataWindow>

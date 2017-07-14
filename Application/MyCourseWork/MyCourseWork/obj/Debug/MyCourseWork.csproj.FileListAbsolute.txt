@@ -1,0 +1,67 @@
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\output\Debug\MyCourseWork.exe.config
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\output\Debug\MyCourseWork.exe.config
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.csprojResolveAssemblyReference.cache
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\Views\AddComplatedProcccessWindow.baml
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\Views\DocumentWindow.baml
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\Views\IndicatorWindow.baml
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\Views\StatisticWindow.baml
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\App.baml
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\Views\AddComplatedProcccessWindow.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\Views\DocumentWindow.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\Views\IndicatorWindow.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\Views\StatisticWindow.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\App.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork_Content.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork_MarkupCompile.cache
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.g.resources
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.Properties.Resources.resources
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.csproj.GenerateResource.Cache
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\output\Debug\MyCourseWork.exe
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\output\Debug\MyCourseWork.pdb
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.exe
+D:\kpi\Мультимедійні технології\Курсова робота — копия\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.pdb
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.exe
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.pdb
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.csprojResolveAssemblyReference.cache
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\AddComplatedProcccessWindow.baml
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\ChangeWorkerAndDates.baml
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\DocumentWindow.baml
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\IndicatorWindow.baml
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\StatisticWindow.baml
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\App.baml
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\AddComplatedProcccessWindow.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\ChangeWorkerAndDates.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\DocumentWindow.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\IndicatorWindow.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\Views\StatisticWindow.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\App.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork_Content.g.cs
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork_MarkupCompile.cache
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.g.resources
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.Properties.Resources.resources
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.csproj.GenerateResource.Cache
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\output\Debug\MyCourseWork.exe
+D:\kpi\Мультимедійні технології\Курсова робота\MyCourseWork\output\Debug\MyCourseWork.pdb
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\output\Debug\MyCourseWork.exe.config
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.exe
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.pdb
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\output\Debug\MyCourseWork.exe
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\output\Debug\MyCourseWork.pdb
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.csprojResolveAssemblyReference.cache
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\AddComplatedProcccessWindow.baml
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\ChangeWorkerAndDates.baml
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\DocumentWindow.baml
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\IndicatorWindow.baml
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\StatisticWindow.baml
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\App.baml
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\AddComplatedProcccessWindow.g.cs
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\ChangeWorkerAndDates.g.cs
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\DocumentWindow.g.cs
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\IndicatorWindow.g.cs
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\Views\StatisticWindow.g.cs
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\App.g.cs
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork_Content.g.cs
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork_MarkupCompile.cache
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.g.resources
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.Properties.Resources.resources
+D:\kpi\Павловський\2 semestr\CourseWork\Application\MyCourseWork\MyCourseWork\obj\Debug\MyCourseWork.csproj.GenerateResource.Cache
